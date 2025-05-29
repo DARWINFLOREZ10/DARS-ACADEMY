@@ -27,21 +27,28 @@
     </header>
 
     <main>
-        <section class="card">
+        <section class="sala">
             <h2>Sala de Llamadas</h2>
 
-            <div style="margin-bottom: 2rem;">
+            <div class="bloque">
                 <h3>Crear una Sala</h3>
-                <button id="btn-crear">Generar Código</button>
+                <button class="btn btn--crear" id="btn-crear">Generar Código</button>
                 <p class="codigo">Código: <span id="codigo-generado">----</span></p>
             </div>
 
-            <div>
+            <div class="bloque">
                 <h3>Unirse a una Sala</h3>
-                <input type="text" id="codigo-input" placeholder="Ingresa el código" />
-                <button id="btn-unirse">Unirse</button>
+                <input type="text" class="input" id="codigo-input" placeholder="Ingresa el código" />
+                <button class="btn btn--unirse" id="btn-unirse">Unirse</button>
             </div>
         </section>
+
+        <aside class="estado-llamada">
+            <h3><span class="punto-rojo"></span> Llamada en Curso</h3>
+            <p><strong>Participante:</strong> Mariana Gonzales</p>
+            <p><strong>Duración:</strong> 00:05:23</p>
+            <button class="btn btn--finalizar">Finalizar Llamada</button>
+        </aside>
     </main>
 
     <footer>
@@ -49,7 +56,6 @@
     </footer>
 
     <script>
-        // Función para generar un código alfanumérico aleatorio de 6 caracteres
         function generarCodigo() {
             return Math.random().toString(36).substring(2, 8).toUpperCase();
         }
@@ -68,7 +74,6 @@
             const codigo = codigoInput.value.trim();
             if (codigo.length === 6) {
                 alert(`Intentando unirse a la sala con código: ${codigo}`);
-                // Aquí puedes añadir lógica para unirse a la sala real
             } else {
                 alert('Por favor ingresa un código válido de 6 caracteres.');
             }
