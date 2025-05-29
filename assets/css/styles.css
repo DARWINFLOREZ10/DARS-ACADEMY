@@ -26,12 +26,27 @@ header {
     justify-content: center;
 }
 
-.carrusel-img {
-    width: 100%;
-    height: 300px !important;
-    object-fit: cover;
+/* Limita el ancho del carrusel y céntralo */
+.carousel {
+    max-width: 800px;
+    /* o el tamaño que prefieras */
+    height: 400px;
+    /* fija una altura constante */
     margin: 0 auto;
+    border-radius: 10px;
+    /* opcional: esquinas redondeadas */
+    overflow: hidden;
+    /* oculta cualquier desborde */
 }
+
+/* Asegúrate de que las imágenes llenen bien el espacio */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* asegura que las imágenes cubran todo sin deformarse */
+}
+
 
 
 header h1 {
